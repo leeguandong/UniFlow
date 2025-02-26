@@ -1,0 +1,2 @@
+# OmniBridge
+统一的大语言，多模态，FLUX生成接口，Fastapi启动，配置化的启动服务
