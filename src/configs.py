@@ -8,7 +8,7 @@ OPENAI_BASE_URL = ""
 OPENAI_PROXY_URL = ""
 
 # Volcengine 配置
-VOLCENGINE_API_KEY = "417becbe-4f26-4bd9-bfe7-af32b9eac9f6"
+VOLCENGINE_API_KEY = ""
 
 # Transformer 配置
 TRANSFORMER_MODEL_PATH = "/path/to/transformer/model"
