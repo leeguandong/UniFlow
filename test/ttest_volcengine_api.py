@@ -1,7 +1,7 @@
 import os
 from volcenginesdkarkruntime import Ark
 
-client = Ark(api_key="417becbe-4f26-4bd9-bfe7-af32b9eac9f6")
+client = Ark(api_key="")
 
 print("----- standard request -----")
 completion = client.chat.completions.create(
