@@ -1,7 +1,7 @@
 import requests
 
 # 代理API基本配置
-API_BASE = "http://172.31.114.167"
+API_BASE = ""
 API_KEY = "sk-test"  # 任意字符串均可
 
 # 支持的模型列表
