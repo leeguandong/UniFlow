@@ -1,0 +1,577 @@
+2025-03-25 19:59:18,807 [INFO] HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-25 19:59:18,846 [INFO] HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-25 19:59:40,437 [INFO] UnifiedAPI initialized
+2025-03-25 19:59:40,493 [INFO] Volcengine adapter initialized with default model: deepseek-v3-241226
+2025-03-25 19:59:40,493 [ERROR] UnifiedAPI chat failed for platform volcengine: 'max_tokens'
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+KeyError: 'max_tokens'
+2025-03-25 19:59:40,494 [ERROR] Gradio chat failed: 'max_tokens'
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\frontend\gradio_ui.py", line 12, in chat_interface
+    result = api.chat(prompt, platform=platform, system_prompt=system_prompt, image_path=image_path)
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+KeyError: 'max_tokens'
+2025-03-25 20:03:33,735 [INFO] HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-25 20:03:33,806 [INFO] HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-25 20:04:15,883 [INFO] UnifiedAPI initialized
+2025-03-25 20:04:15,912 [INFO] Volcengine adapter initialized with default model: deepseek-v3-241226
+2025-03-25 20:04:15,959 [INFO] 1 retry left
+2025-03-25 20:04:15,959 [INFO] Retrying request to /chat/completions in 0.915207 seconds
+2025-03-25 20:04:16,950 [INFO] 0 retries left
+2025-03-25 20:04:16,950 [INFO] Retrying request to /chat/completions in 1.514263 seconds
+2025-03-25 20:04:18,563 [ERROR] UnifiedAPI chat failed for platform volcengine: Connection error., request_id: 20250325200418vd1MksDDQB3kltOGtIkD
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_backends\sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 407, in _request
+    response = self._client.send(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+  File "D:\common_tools\UniFlow\src\client\adapters\volcengine_adapter.py", line 33, in chat
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_utils\_utils.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\resources\chat\completions.py", line 179, in create
+    resp = self._post(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 557, in post
+    ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 629, in request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 438, in _request
+    raise ArkAPIConnectionError(request=request, request_id=req_id) from err
+volcenginesdkarkruntime._exceptions.ArkAPIConnectionError: Connection error., request_id: 20250325200418vd1MksDDQB3kltOGtIkD
+2025-03-25 20:04:18,624 [ERROR] Gradio chat failed: Connection error., request_id: 20250325200418vd1MksDDQB3kltOGtIkD
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_backends\sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 407, in _request
+    response = self._client.send(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\frontend\gradio_ui.py", line 12, in chat_interface
+    result = api.chat(prompt, platform=platform, system_prompt=system_prompt, image_path=image_path)
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+  File "D:\common_tools\UniFlow\src\client\adapters\volcengine_adapter.py", line 33, in chat
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_utils\_utils.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\resources\chat\completions.py", line 179, in create
+    resp = self._post(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 557, in post
+    ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 629, in request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 438, in _request
+    raise ArkAPIConnectionError(request=request, request_id=req_id) from err
+volcenginesdkarkruntime._exceptions.ArkAPIConnectionError: Connection error., request_id: 20250325200418vd1MksDDQB3kltOGtIkD
+2025-03-25 20:05:05,740 [INFO] HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-25 20:05:05,777 [INFO] HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-25 20:06:01,288 [INFO] UnifiedAPI initialized
+2025-03-25 20:06:01,331 [INFO] Volcengine adapter initialized with default model: deepseek-v3-241226
+2025-03-25 20:06:01,412 [INFO] 1 retry left
+2025-03-25 20:06:01,413 [INFO] Retrying request to /chat/completions in 0.836721 seconds
+2025-03-25 20:06:02,374 [INFO] 0 retries left
+2025-03-25 20:06:02,374 [INFO] Retrying request to /chat/completions in 1.512909 seconds
+2025-03-25 20:06:03,968 [ERROR] UnifiedAPI chat failed for platform volcengine: Connection error., request_id: 20250325200603KaIXu8a0lhyBntNUwXNF
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_backends\sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 407, in _request
+    response = self._client.send(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+  File "D:\common_tools\UniFlow\src\client\adapters\volcengine_adapter.py", line 33, in chat
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_utils\_utils.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\resources\chat\completions.py", line 179, in create
+    resp = self._post(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 557, in post
+    ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 629, in request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 438, in _request
+    raise ArkAPIConnectionError(request=request, request_id=req_id) from err
+volcenginesdkarkruntime._exceptions.ArkAPIConnectionError: Connection error., request_id: 20250325200603KaIXu8a0lhyBntNUwXNF
+2025-03-25 20:06:03,982 [ERROR] Gradio chat failed: Connection error., request_id: 20250325200603KaIXu8a0lhyBntNUwXNF
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_backends\sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 407, in _request
+    response = self._client.send(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: EOF occurred in violation of protocol (_ssl.c:997)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\frontend\gradio_ui.py", line 12, in chat_interface
+    result = api.chat(prompt, platform=platform, system_prompt=system_prompt, image_path=image_path)
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+  File "D:\common_tools\UniFlow\src\client\adapters\volcengine_adapter.py", line 33, in chat
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_utils\_utils.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\resources\chat\completions.py", line 179, in create
+    resp = self._post(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 557, in post
+    ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 629, in request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 428, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 504, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\volcenginesdkarkruntime\_base_client.py", line 438, in _request
+    raise ArkAPIConnectionError(request=request, request_id=req_id) from err
+volcenginesdkarkruntime._exceptions.ArkAPIConnectionError: Connection error., request_id: 20250325200603KaIXu8a0lhyBntNUwXNF
+2025-03-25 20:06:21,144 [INFO] UnifiedAPI initialized
+2025-03-25 20:06:21,185 [INFO] Volcengine adapter initialized with default model: deepseek-v3-241226
+2025-03-25 20:06:22,805 [INFO] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 20:06:22,817 [INFO] Volcengine chat completed in 1.632 seconds
+2025-03-25 20:06:22,817 [INFO] UnifiedAPI chat completed for volcengine in 1.672 seconds
+2025-03-25 20:06:22,818 [INFO] Prompt: 你好, Response: 你好！有什么我可以帮助你的吗？无论是关于学习、生活还是其他问题，我都很乐意为你提供帮助。
+2025-03-25 20:06:22,821 [INFO] Gradio chat successful for volcengine: Prompt: 你好, Response: 你好！有什么我可以帮助你的吗？无论是关于学习、生活还是其他问题，我都很乐意为你提供帮助。
+2025-03-25 20:06:33,165 [INFO] UnifiedAPI initialized
+2025-03-25 20:06:33,181 [INFO] Volcengine adapter initialized with default model: deepseek-v3-241226
+2025-03-25 20:06:34,775 [INFO] HTTP Request: POST https://ark.cn-beijing.volces.com/api/v3/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 20:06:34,777 [INFO] Volcengine chat completed in 1.597 seconds
+2025-03-25 20:06:34,778 [INFO] UnifiedAPI chat completed for volcengine in 1.612 seconds
+2025-03-25 20:14:08,392 [INFO] HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-25 20:14:08,429 [INFO] HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-25 20:14:21,265 [INFO] UnifiedAPI initialized
+2025-03-25 20:14:21,328 [INFO] OpenAI adapter initialized with default model: gpt-4o-mini
+2025-03-25 20:14:26,384 [INFO] Retrying request to /chat/completions in 0.395761 seconds
+2025-03-25 20:14:31,808 [INFO] Retrying request to /chat/completions in 0.925579 seconds
+2025-03-25 20:14:37,758 [ERROR] OpenAI chat failed: Connection error.
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    with map_exceptions(exc_map):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\client\adapters\openai_adapter.py", line 34, in chat
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1030, in _request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+2025-03-25 20:14:37,778 [ERROR] UnifiedAPI chat failed for platform openai: Connection error.
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    with map_exceptions(exc_map):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+  File "D:\common_tools\UniFlow\src\client\adapters\openai_adapter.py", line 34, in chat
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1030, in _request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+2025-03-25 20:14:37,780 [ERROR] Gradio chat failed: Connection error.
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http_proxy.py", line 288, in handle_request
+    connect_response = self._connection.handle_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    with map_exceptions(exc_map):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\common_tools\UniFlow\src\frontend\gradio_ui.py", line 12, in chat_interface
+    result = api.chat(prompt, platform=platform, system_prompt=system_prompt, image_path=image_path)
+  File "D:\common_tools\UniFlow\src\client\unified_api.py", line 59, in chat
+    result, _ = adapter.chat(messages, stream=stream, max_tokens=config["max_tokens"], temperature=config["temperature"])
+  File "D:\common_tools\UniFlow\src\client\adapters\openai_adapter.py", line 34, in chat
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "C:\Users\gdli7\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1030, in _request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
