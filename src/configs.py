@@ -3,9 +3,9 @@ import torch
 import os
 
 # OpenAI 配置
-OPENAI_API_KEY = "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"
-OPENAI_BASE_URL = "https://api.openai.com/v1"
-OPENAI_PROXY_URL = "http://10.231.139.4:7610"
+OPENAI_API_KEY = ""
+OPENAI_BASE_URL = ""
+OPENAI_PROXY_URL = ""
 
 # Volcengine 配置
 VOLCENGINE_API_KEY = "417becbe-4f26-4bd9-bfe7-af32b9eac9f6"
