@@ -8,8 +8,8 @@ from openai import OpenAI
 #     print("Please set the OPENAI_API_KEY environment variable.")
 #     sys.exit(1)
 
-proxy_url = 'http://10.231.139.4:7610'
-client = OpenAI(api_key="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", http_client=httpx.Client(proxies={"http://": proxy_url, "https://": proxy_url}))
+proxy_url = ''
+client = OpenAI(api_key="", http_client=httpx.Client(proxies={"http://": proxy_url, "https://": proxy_url}))
 
 def video_caption(user_prompt):
     response = client.chat.completions.create(
